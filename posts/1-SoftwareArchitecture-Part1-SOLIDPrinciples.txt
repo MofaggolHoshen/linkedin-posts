@@ -1,0 +1,47 @@
+🚀 Software Architecture (Part 1): SOLID Principles
+
+
+
+S — Single Responsibility
+
+A class should have only one reason to change. Keep responsibilities focused to make code easier to maintain and test.
+
+Visual: OrderService and OrderRepository as separate boxes with arrows showing delegation.
+
+
+
+O — Open/Closed
+
+Software entities should be open for extension but closed for modification. Add new behavior without breaking existing code.
+
+Visual: Discount base class with extensions like PercentageDiscount, SeasonalDiscount, and PriceCalculator untouched.
+
+
+
+L — Liskov Substitution
+
+Derived classes should be replaceable for their base classes without altering correctness. If it breaks expectations, it breaks design.
+
+Visual: Shape base class with Rectangle and Circle subclasses, and AreaPrinter working with both.
+
+
+
+I — Interface Segregation
+
+Prefer small, specific interfaces over large, general ones. Clients shouldn’t depend on methods they don’t use.
+
+Visual: Split interfaces (IWorkable, IEatable, ISleepable) with HumanWorker and RobotWorker implementing only what they need.
+
+
+
+D — Dependency Inversion
+
+Depend on abstractions, not concrete implementations. This reduces coupling and improves flexibility and testability.
+
+Visual: NotificationService depending on IMessageSender, with EmailSender and SmsSender injected.
+
+
+
+💡 SOLID isn’t about over-engineering — it’s about writing code that survives change.
+
+#dotnet #csharp #softwareengineering #cleanarchitecture #softwarearchitecture #solidprinciples #designpatterns #backenddevelopment #webdevelopment #coding #programming #developer #devlife #bestpractices #scalability #maintainability #testability #architecture #microservices #api #engineering #SoftwareArchitecturePart1
