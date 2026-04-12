@@ -1,0 +1,114 @@
+🚀 **Software Architecture (Part 2): Singleton Design Pattern**
+
+One instance. One truth. Zero surprises.
+
+The Singleton is one of the original GoF (Gang of Four) Creational patterns — and one of the most misunderstood. Done right, it's a precision tool. Done wrong, it becomes a hidden time bomb in your codebase.
+
+
+🔒 Intent
+
+Ensure a class has only ONE instance and provide a global access point to it.
+
+⚠️ The Problem Without It
+
+Without a deliberate mechanism, multiple parts of your code can each create their own copy of a shared resource — leading to inconsistent state, wasted memory, and nasty race conditions in multi-threaded environments.
+
+
+
+✅ Three Ways to Implement It in C#
+
+
+
+1️⃣ Lazy<T> — Recommended ⭐
+
+Thread-safe by default. Truly lazy — the instance is only created on first access. No manual locking, no boilerplate.
+
+
+
+sealed class AppConfiguration
+
+{
+
+  private static readonly Lazy<AppConfiguration> _lazy = new(() => new AppConfiguration());
+
+  public static AppConfiguration Instance => _lazy.Value;
+
+  private AppConfiguration() { }
+
+}
+
+
+
+Visual: Single arrow from any caller → _lazy.Value → one AppConfiguration instance (constructed once).
+
+
+
+2️⃣ Static readonly — Simple & Eager
+
+The CLR guarantees a static field initialiser runs exactly once. Ideal for lightweight objects that are always needed.
+
+
+
+class MetricsCollector
+
+{
+
+  public static readonly MetricsCollector Instance = new();
+
+  private MetricsCollector() { }
+
+}
+
+
+
+Visual: Class load → MetricsCollector instance created once, stored in static field, shared everywhere.
+
+
+
+3️⃣ Double-Check Lock — Legacy Reference Only ⚠️
+
+The old way before Lazy<T> existed. Error-prone to get right. Only shown for historical context — prefer Lazy<T>.
+
+
+
+👍 Pros
+
+✔ Controlled access — only one object is ever created
+
+✔ Lazy initialisation — saves resources until first use
+
+✔ Reduced memory footprint — no repeated allocation of heavy objects
+
+✔ Thread-safe with Lazy<T> or static readonly
+
+
+
+👎 Cons (and why Singleton is often abused)
+
+✘ Global state → hidden coupling and implicit dependencies
+
+✘ Hard to unit test — mocking requires extra effort or interfaces
+
+✘ Violates SRP — the class manages both its logic and its own lifetime
+
+✘ Hinders dependency injection — tight coupling to a concrete class
+
+
+
+💡 The Golden Rule
+
+➖ In production code: don't reach for static access. Register your singleton with the DI container instead. services.AddSingleton<AppConfiguration>();
+
+➖ This gives you all the benefits — one instance, shared everywhere — without the hidden coupling.
+
+➖ Use Singleton when you have a genuine shared-resource problem.
+
+Avoid it when you just want a convenient global variable.
+
+
+
+🔗 Full source code + docs in the comments 👇
+
+
+
+#dotnet #csharp #softwareengineering #designpatterns #singleton #creationalpatterns #cleanarchitecture #softwarearchitecture #backenddevelopment #dependencyinjection #threading #programming #coding #developer #bestpractices #scalability #testability #architecture #engineering #SoftwareArchitecturePart2
