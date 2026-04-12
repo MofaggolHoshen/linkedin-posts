@@ -5,12 +5,9 @@ One instance. One truth. Zero surprises.
 The Singleton is one of the original GoF (Gang of Four) Creational patterns — and one of the most misunderstood. Done right, it's a precision tool. Done wrong, it becomes a hidden time bomb in your codebase.
 
 
-
 🔒 Intent
 
 Ensure a class has only ONE instance and provide a global access point to it.
-
-
 
 ⚠️ The Problem Without It
 
