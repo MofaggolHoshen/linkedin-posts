@@ -1,6 +1,6 @@
 # LinkedIn Posts
 
-A personal repository for drafting and organizing LinkedIn posts before publishing them.
+A personal repository for drafting and organizing LinkedIn posts before publishing them. 
 
 ## Purpose
 
