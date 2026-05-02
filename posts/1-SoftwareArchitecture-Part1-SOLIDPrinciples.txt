@@ -1,7 +1,5 @@
 🚀 Software Architecture (Part 1): SOLID Principles
 
-
-
 S — Single Responsibility
 
 A class should have only one reason to change. Keep responsibilities focused to make code easier to maintain and test.
