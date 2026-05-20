@@ -1,31 +1,44 @@
 # LinkedIn Posts
 
-A personal repository for drafting and organizing LinkedIn posts before publishing them. 
+A personal repository for drafting, organizing, and iterating on LinkedIn content.
 
 ## Purpose
 
-This repository serves as a writing workspace to:
-- Draft LinkedIn posts in Markdown format
-- Review and refine content before publishing
-- Keep a history of published and upcoming posts
+This repository is used to:
+- Keep post ideas and drafts in one place
+- Build multi-part content series over time
+- Maintain reusable templates for consistent writing
 
-## Structure
+## Current Structure
 
 ```
 posts/
-├── drafts/       # Work-in-progress posts not yet published
-├── published/    # Posts that have been published to LinkedIn
-└── template.md   # Template to use when creating a new post
+	1-SoftwareArchitecture-Part1-SOLIDPrinciples.txt
+	2-SoftwareArchitecture-Part2-Creational-Singletone.txt
+	3-SoftwareArchitecture-Part3-Creational-AbstractFactory.txt
+	2026-04-11-the-power-of-consistency.md
+	template.md
 ```
 
-## How to Use
+## Naming Conventions
 
-1. **Create a new draft** – Copy `posts/template.md` to `posts/drafts/YYYY-MM-DD-short-title.md` and fill in your content.
-2. **Review & refine** – Edit the draft, commit updates, and iterate until the post is ready.
-3. **Publish** – Once published on LinkedIn, move the file from `posts/drafts/` to `posts/published/` and add the publication date and post URL to the front matter.
+- Numbered series posts:
+	- `<index>-<topic>.txt`
+	- Example: `1-SoftwareArchitecture-Part1-SOLIDPrinciples.txt`
+- Date-based standalone posts:
+	- `YYYY-MM-DD-short-title.md`
+	- Example: `2026-04-11-the-power-of-consistency.md`
 
-## File Naming Convention
+## Workflow
 
-`YYYY-MM-DD-short-descriptive-title.md`
+1. Copy `posts/template.md` for a new draft.
+2. Choose the naming style:
+	 - Use numbered `.txt` files for series content.
+	 - Use dated `.md` files for standalone posts.
+3. Refine the draft and commit incremental updates.
+4. Publish to LinkedIn when ready.
 
-Example: `2026-04-11-the-power-of-consistency.md`
+## Notes
+
+- Keep titles clear and searchable.
+- Keep one topic per file for easier reuse and repurposing.
